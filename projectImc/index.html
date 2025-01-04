@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projeto IMC</title>
+
+		<!-- css import -->
+		<link rel="stylesheet" href="./assets/css/remedy.css" />
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/modal.css" />
+
+		<!-- google font import roboto -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="error-message display-none">
+			<p>Digite somente números</p>
+		</header>
+
+		<main class="container">
+			<section class="content">
+				<h1>Cálculo de IMC</h1>
+				<fieldset>
+					<form>
+						<div class="weight-input-container">
+							<label for="weight">Peso (kg)</label>
+							<input
+								type="number"
+								name="weight"
+								id="weight"
+								min="0"
+							/>
+						</div>
+
+						<div class="height-input-container">
+							<label for="height">Altura (m)</label>
+							<input type="number" name="height" id="height" />
+						</div>
+
+						<input type="submit" value="Calcular IMC →" />
+					</form>
+				</fieldset>
+			</section>
+		</main>
+
+		<div class="modal-container display-none">
+			<div class="modal">
+				<div class="modal-header">
+					<button class="close-modal" id="close-modal-btn">X</button>
+				</div>
+				<div class="modal-content">
+					<h3>Seu IMC é de 28</h3>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
