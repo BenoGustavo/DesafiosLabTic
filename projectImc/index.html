@@ -5,6 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Projeto IMC</title>
 
+		<link
+			rel="shortcut icon"
+			href="./assets/img/favicon.png"
+			type="image/x-icon"
+		/>
+
 		<!-- css import -->
 		<link rel="stylesheet" href="./assets/css/remedy.css" />
 		<link rel="stylesheet" href="./assets/css/styles.css" />
@@ -30,20 +36,19 @@
 					<form>
 						<div class="weight-input-container">
 							<label for="weight">Peso (kg)</label>
-							<input
-								type="number"
-								name="weight"
-								id="weight"
-								min="0"
-							/>
+							<input type="text" name="weight" id="weight" />
 						</div>
 
 						<div class="height-input-container">
 							<label for="height">Altura (m)</label>
-							<input type="number" name="height" id="height" />
+							<input type="text" name="height" id="height" />
 						</div>
 
-						<input type="submit" value="Calcular IMC →" />
+						<input
+							type="submit"
+							id="result-button"
+							value="Calcular IMC →"
+						/>
 					</form>
 				</fieldset>
 			</section>
@@ -55,9 +60,11 @@
 					<button class="close-modal" id="close-modal-btn">X</button>
 				</div>
 				<div class="modal-content">
-					<h3>Seu IMC é de 28</h3>
+					<h3 id="imc-result"></h3>
 				</div>
 			</div>
 		</div>
 	</body>
+
+	<script src="./assets/js/scripts.js"></script>
 </html>
