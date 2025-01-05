@@ -39,7 +39,7 @@ label {
 	margin-bottom: 8px;
 }
 
-form > div > input {
+fieldset > div > input {
 	border-radius: 4px;
 	padding: 16px;
 	width: 300px;
@@ -54,12 +54,12 @@ form > div > input {
 	outline: none;
 }
 
-form > div > input:hover,
-form > div > input:focus {
+fieldset > div > input:hover,
+fieldset > div > input:focus {
 	border: 2px solid var(--buttonclr);
 }
 
-form > div > input:focus {
+fieldset > div > input:focus {
 	color: var(--grayclr);
 }
 
