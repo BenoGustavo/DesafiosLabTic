@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo list</title>
+
+		<!-- Css reset -->
+		<link rel="stylesheet" href="./assets/css/remedy.css" />
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+
+		<!-- Google fonts import -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="header-container no-user-interaction">
+			<div class="logo">
+				<img
+					src="./assets/img/rocket.svg"
+					alt="Logo da pagina com foguete azul"
+				/>
+				<h1 class="title">to<span>do</span></h1>
+			</div>
+		</header>
+
+		<main class="main-container">
+			<section>
+				<form class="form-container">
+					<input
+						type="text"
+						class="input"
+						placeholder="Adicione uma nova tarefa"
+					/>
+
+					<button type="submit">
+						<img
+							src="./assets/img/plus.svg"
+							alt="icone redondo de um sinal de 'mais'"
+						/>
+						Criar
+					</button>
+				</form>
+			</section>
+
+			<div class="todo-counter-container no-user-interaction">
+				<div class="counter">
+					<p>Tarefas criadas</p>
+					<p class="todo-counter">0</p>
+				</div>
+
+				<div class="counter">
+					<p style="color: var(--purple)">Concluídas</p>
+					<p class="completed-todo-counter">0</p>
+				</div>
+			</div>
+
+			<section class="empty-todos-container dp-none">
+				<div class="empty-todolist no-user-interaction dp-none">
+					<img
+						src="./assets/img/Clipboard.svg"
+						alt="Ilustração de uma lista vazia"
+					/>
+					<p>Você ainda não tem tarefas cadastradas</p>
+					<p>Crie tarefas e organize seus itens a fazer</p>
+				</div>
+			</section>
+
+			<section class="todos-container">
+				<div class="todo">
+					<div class="todo-content">
+						<input type="checkbox" class="checkbox" />
+						<p class="todo-text">Tarefa 1</p>
+					</div>
+
+					<button class="delete-todo">
+						<img
+							src="./assets/img/trash.svg"
+							alt="icone de lixeira"
+						/>
+					</button>
+				</div>
+			</section>
+		</main>
+
+        <!-- Modals -->
+        <div class="dp-none">
+            <div class="deletion-modal">
+                <div class="modal-content">
+                    <p>
+                        Tem certeza que deseja excluir essa tarefa? </br>Essa ação não
+                        pode ser desfeita
+                    </p>
+                    <div class="modal-buttons">
+                        <button class="cancel-deletion">Cancelar</button>
+                        <button class="confirm-deletion">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+	</body>
+</html>
