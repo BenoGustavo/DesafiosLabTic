@@ -436,3 +436,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+@media (max-width: 780px) {
+	.main-container {
+		padding: 0 1.2rem;
+	}
+}
