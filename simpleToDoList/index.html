@@ -35,11 +35,11 @@
 				<form class="form-container">
 					<input
 						type="text"
-						class="input"
+						id="todo-input"
 						placeholder="Adicione uma nova tarefa"
 					/>
 
-					<button type="submit">
+					<button type="submit" id="create-todo">
 						<img
 							src="./assets/img/plus.svg"
 							alt="icone redondo de um sinal de 'mais'"
@@ -73,24 +73,11 @@
 			</section>
 
 			<section class="todos-container">
-				<div class="todo">
-					<div class="todo-content">
-						<input type="checkbox" class="checkbox" />
-						<p class="todo-text">Tarefa 1</p>
-					</div>
-
-					<button class="delete-todo">
-						<img
-							src="./assets/img/trash.svg"
-							alt="icone de lixeira"
-						/>
-					</button>
-				</div>
 			</section>
 		</main>
 
         <!-- Modals -->
-        <div class="dp-none">
+        <div class="dp-none" id="modal">
             <div class="deletion-modal">
                 <div class="modal-content">
                     <p>
@@ -105,5 +92,9 @@
             </div>
         </div>
         
+		<!-- Scripts -->
+		 <script type="module" src="./assets/js/LocalStorageDB.js"></script>
+		 <script type="module" src="./assets/js/ToDoFactory.js"></script>
+		<script type="module" src="./assets/js/scripts.js"></script>
 	</body>
 </html>

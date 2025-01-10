@@ -13,6 +13,40 @@
 	--red: #e25858;
 }
 
+/* ANIMATIONS */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes modalFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 body {
 	background-color: var(--gray-600);
 	font-family: Inter, sans-serif;
@@ -51,7 +85,7 @@ body {
 /* FORMULARIO PARA ADICIONAR NOVOS TODOS */
 .main-container {
 	width: 100svw;
-	height: calc(100svh - 182px);
+	height: fit-content;
 	max-width: 736px;
 	margin: 0 auto;
 }
@@ -169,6 +203,7 @@ body {
 	display: flex;
 	height: 100%;
 	width: 100%;
+	flex-direction: column;
 }
 
 .todo:has(.checkbox:checked) {
@@ -176,6 +211,7 @@ body {
 }
 
 .main-container .todos-container .todo {
+	animation: fadeIn 0.4s ease-in-out;
 	display: flex;
 	max-height: 80px;
 	width: 100%;
@@ -187,6 +223,10 @@ body {
 
 	background-color: var(--gray-500);
 	transition: border ease-in-out 0.2s, transform ease-in-out 0.2s;
+}
+
+.main-container .todos-container .todo.remove-animation {
+	animation: fadeOut 0.3s ease-in-out;
 }
 
 .main-container .todos-container .todo + .todo {
@@ -206,9 +246,12 @@ body {
 	line-height: 19.6px;
 	font-weight: 400;
 	color: var(--gray-100);
+	transition: color 0.2s ease-in-out;
 }
 
 .checkbox {
+	transition: transform 0.2s ease-in-out;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -349,17 +392,6 @@ body {
 	filter: brightness(0.8);
 }
 
-/* TESTING */
-
 .dp-none {
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.5s ease-in-out;
 	display: none;
-}
-
-.visible {
-	opacity: 1;
-	visibility: visible;
-	transition: opacity 0.5s ease-in-out;
 }
