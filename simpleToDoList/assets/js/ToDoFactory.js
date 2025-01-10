@@ -59,8 +59,6 @@ export class ToDoFactory {
             document.querySelector("#modal").classList.add("dp-none");
             this.repository.delete(todo.text);
             
-            console.log(todoDiv); 
-
             todoDiv.classList.add('remove-animation');
             // Esperando animação de remoção
             setTimeout(() => todoDiv.remove(), 300);

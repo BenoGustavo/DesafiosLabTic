@@ -47,6 +47,37 @@
 	}
 }
 
+@keyframes slideIn {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes slideOut {
+	from {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+/* GENERAL STYLES */
+.slide-in {
+	animation: slideIn 0.3s ease-in-out;
+}
+
+.slide-out {
+	animation: slideOut 0.3s ease-in-out;
+}
+
 body {
 	background-color: var(--gray-600);
 	font-family: Inter, sans-serif;
@@ -394,4 +425,14 @@ body {
 
 .dp-none {
 	display: none;
+}
+
+.error-message {
+	background-color: var(--red);
+	color: var(--gray-100);
+	width: 100%;
+	display: none;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
 }
