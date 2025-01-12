@@ -1,0 +1,126 @@
+:root {
+	--bg-color: #191414;
+	--card-bg-color: #2b2626;
+	--white-color: hsl(0, 0%, 100%, 1);
+	--gray-color: hsl(0, 0%, 47%, 1);
+}
+
+body {
+	background-color: var(--bg-color);
+	font-family: "SpotifyMixUI-Regular", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding: 0 1.5rem;
+}
+
+h1 {
+	font-family: "SpotifyMixUITitleVariable", sans-serif;
+}
+strong {
+	font-family: "SpotifyMixUI-Bold", sans-serif;
+}
+
+.wrapper {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.search-container {
+	display: flex;
+	margin: 1rem 3rem;
+}
+
+.search-container input {
+	height: 1.5rem;
+	width: 240px;
+	border-radius: 100px;
+	padding: 1rem 0.5rem 0.9rem 2rem;
+
+	font-size: 0.8rem;
+	line-height: 12px;
+	font-weight: 400;
+
+	background-color: var(--white-color);
+	background-image: url("../img/Search.svg");
+	background-position: center left 10px;
+	background-repeat: no-repeat;
+	background-size: 12px;
+
+	outline: none;
+	border: none;
+}
+
+.main-container h1 {
+	color: var(--white-color);
+	font-size: 2rem;
+	line-height: 40px;
+	font-weight: 700;
+}
+
+.artists-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1.5rem;
+
+	list-style-type: none;
+	padding: 0;
+}
+
+.card {
+	background-color: var(--card-bg-color);
+	border-radius: 4px;
+	padding: 1rem;
+	position: relative;
+}
+
+.card img {
+	width: 100%;
+	border-radius: 50%;
+	user-select: none;
+	pointer-events: none;
+}
+
+.close-btn-container {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	height: 1rem;
+	width: 1rem;
+}
+
+.close-btn {
+	height: 100%;
+	padding: 0.7rem;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+
+	background-color: var(--bg-color);
+	background-image: url("../img/cross.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.artist-info {
+	padding-top: 0.5rem;
+	padding-left: 0.5rem;
+	color: var(--white-color);
+}
+
+.artist-info h2 {
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 1rem;
+	margin-bottom: 0;
+}
+
+.artist-info p {
+	font-size: 0.8rem;
+	line-height: 14px;
+	color: var(--gray-color);
+	font-weight: 400;
+	margin-top: 0.5rem;
+}
