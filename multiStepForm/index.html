@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formulario de multiplas etapas</title>
+
+		<link rel="stylesheet" href="./assets/css/remedy.css" />
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<form>
+			<div class="container active">
+				<div class="progress-bar">
+					<div class="step current" id="step-1-indicator">
+						<span>1</span> Contato
+					</div>
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+					<div class="step" id="step-2-indicator">
+						<span>2</span> Empresa
+					</div>
+
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+
+					<div class="step" id="step-3-indicator">
+						<span>3</span> Projeto
+					</div>
+				</div>
+
+				<fieldset id="step-1">
+					<div class="input-container">
+						<label for="nome">Nome:</label>
+						<input
+							type="text"
+							minlength="3"
+							id="nome"
+							name="nome"
+							required
+							placeholder="Digite seu nome"
+						/>
+					</div>
+
+					<div class="input-container">
+						<label for="telefone">Telefone:</label>
+						<input
+							type="number"
+							id="telefone"
+							name="telefone"
+							required
+							minlength="8"
+							placeholder="Digite seu telefone"
+						/>
+					</div>
+
+					<div class="input-container">
+						<label for="email">Email:</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Digite seu Email"
+							required
+						/>
+					</div>
+					<button
+						type="button"
+						class="next-btn"
+						onclick="nextStep(1,'forward')"
+					>
+						CONTINUAR
+					</button>
+				</fieldset>
+			</div>
+
+			<div class="container dp-none">
+				<div class="progress-bar">
+					<div class="step completed" id="step-1-indicator">
+						<span></span> Contato
+					</div>
+
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+
+					<div class="step current" id="step-2-indicator">
+						<span>2</span> Empresa
+					</div>
+
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+
+					<div class="step" id="step-3-indicator">
+						<span>3</span> Projeto
+					</div>
+				</div>
+
+				<fieldset id="step-2">
+					<div class="input-container">
+						<label for="company_name">Nome da empresa:</label>
+						<input
+							type="text"
+							id="company_name"
+							name="company_name"
+							required
+							minlength="1"
+							placeholder="Digite o nome da empresa"
+						/>
+					</div>
+
+					<div class="input-container">
+						<label for="company_employee_number"
+							>Quantidade e funcionarios:</label
+						>
+						<input
+							type="number"
+							id="company_employee_number"
+							name="company_employee_number"
+							placeholder="Digite a quantidade de funcionarios"
+						/>
+					</div>
+
+					<div class="buttons-container">
+						<button
+							type="button"
+							class="return-btn"
+							onclick="nextStep(0,'backward')"
+						>
+							Anterior
+						</button>
+						<button
+							type="button"
+							class="next-btn"
+							onclick="nextStep(2, 'forward')"
+						>
+							Continuar
+						</button>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="container dp-none">
+				<div class="progress-bar">
+					<div class="step completed" id="step-1-indicator">
+						<span></span> Contato
+					</div>
+
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+
+					<div class="step completed" id="step-2-indicator">
+						<span></span> Empresa
+					</div>
+
+					<img
+						src="./assets/img/arrow_right.svg"
+						alt="seta para a direita"
+					/>
+
+					<div class="step current" id="step-3-indicator">
+						<span>3</span> Projeto
+					</div>
+				</div>
+
+				<fieldset id="step-3">
+					<div class="input-container">
+						<label for="about-the-project">Sobre o projeto:</label>
+						<textarea
+							id="about-the-project"
+							name="about-the-project"
+							placeholder="Digite sobre o projeto"
+						></textarea>
+					</div>
+
+					<div class="input-container">
+						<label for="project-goal">Objetivo do projeto:</label>
+						<textarea
+							id="project-goal"
+							name="project-goal"
+							placeholder="Digite o objetivo do projeto"
+						></textarea>
+					</div>
+
+					<div class="buttons-container">
+						<button
+							type="button"
+							class="return-btn"
+							onclick="nextStep(1,'backward')"
+						>
+							Anterior
+						</button>
+						<button type="submit" id="send-btn">Enviar</button>
+					</div>
+				</fieldset>
+			</div>
+		</form>
+	</body>
+	<script src="./assets/js/script.js"></script>
+</html>
