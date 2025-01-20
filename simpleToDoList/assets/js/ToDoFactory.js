@@ -36,7 +36,7 @@ export class ToDoFactory {
     this.container.appendChild(todoDiv);
 
     this._bindCheckboxEvent(checkbox, todo);
-    this._setDeleteButtonListener(deleteButton, todoDiv, todo);
+    this._bindDeleteButtonEvent(deleteButton, todoDiv, todo);
   }
 
   _bindCheckboxEvent(checkbox, todo) {
@@ -47,24 +47,34 @@ export class ToDoFactory {
     });
   }
 
-  _setDeleteButtonListener(deleteButton, todoDiv, todo) {
+  _bindDeleteButtonEvent(deleteButton, todoDiv, todo) {
     deleteButton.addEventListener("click", () => {
+
+      //Remove display none do modal, deixando-o a mostra
       document.querySelector("#modal").classList.remove("dp-none");
 
+      // Faz a bind no botão de cancelar a deleção
       document.querySelector(".cancel-deletion").addEventListener("click", (event) => {
           document.querySelector("#modal").classList.add("dp-none");
       });
-        
-        document.querySelector(".confirm-deletion").addEventListener("click", (event) => {
-            document.querySelector("#modal").classList.add("dp-none");
-            this.repository.delete(todo.text);
-            
-            todoDiv.classList.add('remove-animation');
-            // Esperando animação de remoção
-            setTimeout(() => todoDiv.remove(), 300);
+      
+      // Faz a bind no botão de confirmar a deleção
+      document.querySelector(".confirm-deletion").addEventListener("click", (event) => {
+          document.querySelector("#modal").classList.add("dp-none");
+          this.repository.delete(todo.text);
+          
+          todoDiv.classList.add('remove-animation');
 
-            this.counter.updateCounters(this.repository.findAll());
-        });
+          // Esperando animação de remoção
+          // setTimeout(() => todoDiv.remove(), 300);
+
+          // Esperando animação de remoção v2
+          todoDiv.addEventListener("animationend", () => {
+              todoDiv.remove()
+              this.counter.updateCounters(this.repository.findAll());
+          });
+      });
+
     });
   }
 }

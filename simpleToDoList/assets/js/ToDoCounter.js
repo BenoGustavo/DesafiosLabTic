@@ -11,7 +11,8 @@ export class ToDoCounter {
   
       this.todoContainer.textContent = total;
       this.completedCounter.textContent = completed;
-  
+      
+      // Verifica se ainda existe alguma tarefa, se não houver, exibe a mensagem de lista vazia
       if (total === 0) {
         this.emptyContainer.classList.remove('dp-none');
       } else {
